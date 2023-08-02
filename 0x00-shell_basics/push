@@ -1,0 +1,21 @@
+#!/bin/bash
+# A shell script to commit and push changes to a git repository
+
+# Check if an argument is provided
+if [ -z "$1" ]
+then
+  echo "Please provide a commit message as an argument"
+  exit 1
+fi
+
+# Check if a file name is provided
+if [ -z "$2" ]
+then
+  echo "Please provide the name of the file to be added"
+  exit 1
+fi
+
+# Perform git commands
+git add $2
+git commit -m "$1"
+git push
